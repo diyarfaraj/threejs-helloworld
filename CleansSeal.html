@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>How many CleanSeal supply do you need? </h1>
+    <label for="">Airflow :
+        <input id="a1"  type="text" />
+    m3/h. 
+
+    <button id="calcBtn">Calculate</button>
+
+    <h2>Results for information: </h2>
+    
+    </label>
+    </div>
+<br>
+
+
+
+<input type="checkbox" class="checkbox1" value="1" name="check" id="lamin" />
+<label for="">Laminar Flow Classic</label>
+<br/>
+
+<input type="checkbox" class="checkbox2" value="1" name="check" id="laminlow" />
+<label for="">Laminar Low energy mode </label>
+<br/>
+
+<input type="checkbox" class="checkbox3" value="1" name="check" id="turbo" />
+<label for="">Turbolent Flow</label>
+<br>
+
+ <div class="calculatedSizes">
+<input id="cs3P3" type="text"  name="total_amt" />
+<label for="">3P3</label>
+
+<input id="cs3P6" type="text"  name="total_amt" />
+<label for="">3P6</label>
+
+<input id="cs4P4" type="text"  name="total_amt" />
+<label for="">4P4</label>
+
+<input id="cs5P5" type="text"  name="total_amt" />
+<label for="">5P5</label>
+
+<input id="cs6P6" type="text"  name="total_amt" />
+<label for="">6P6</label>
+
+<input id="cs9P6" type="text"  name="total_amt" />
+<label for="">9P6</label>
+
+<input id="cs11P5" type="text"  name="total_amt" />
+<label for="">11P5</label>
+
+<input id="cs12P6" type="text"  name="total_amt" />
+<label for="">12P6</label>
+
+<input id="cs9P9" type="text"  name="total_amt" />
+<label for="">9P9</label>
+</div>
+
+<script>
+
+
+
+
+
+
+
+/* function onlyOne(checkbox) {
+
+    var checkboxes = document.getElementsByName('check');
+    checkboxes.forEach((item) => {
+        
+        if (item !== checkbox){
+            item.checked = false;
+            item.removeAttribute("checked", "true");
+           
+        } else {
+            item.checked = true;
+            item.setAttribute("checked", "true");
+        }
+        let checkedBox = localStorage.setItem("itemChecked", item.checked); 
+
+
+       
+    })
+
+
+
+} */
+
+
+
+
+
+
+
+let laminlow = document.getElementById('laminlow');
+let  lamin = document.getElementById('lamin');
+let turbo = document.getElementById('turbo'); 
+
+
+
+
+calculateCs= function()
+{
+    let totalVolume = document.getElementById('a1').value;
+    localStorage.setItem('totalVol', totalVolume);
+
+    if (laminlow.checked && lamin.checked === false && turbo.checked === false) {
+            document.getElementById('cs3P3').value = Math.round(parseInt(totalVolume)/ 150);
+
+            document.getElementById('cs3P6').value = Math.round(parseInt(totalVolume))/ 250;
+
+            document.getElementById('cs4P4').value = Math.round(parseInt(totalVolume)/ 350);
+            document.getElementById('cs5P5').value = Math.round(parseInt(totalVolume)/ 450);
+            document.getElementById('cs6P6').value = Math.round(parseInt(totalVolume)/ 550);
+            document.getElementById('cs9P6').value = Math.round(parseInt(totalVolume)/ 900);
+            document.getElementById('cs11P5').value = Math.round(parseInt(totalVolume)/ 900);
+            document.getElementById('cs12P6').value = Math.round(parseInt(totalVolume)/ 1200);
+            document.getElementById('cs9P9').value = Math.round(parseInt(totalVolume)/ 1350);
+    }
+    else if (lamin.checked &&laminlow.checked === false &&turbo.checked === false) {
+            document.getElementById('cs3P3').value = Math.round(parseInt(totalVolume)/ 150);
+            document.getElementById('cs3P6').value = Math.round(parseInt(totalVolume)/ 300);
+            document.getElementById('cs4P4').value = Math.round(parseInt(totalVolume)/ 350);
+            document.getElementById('cs5P5').value = Math.round(parseInt(totalVolume)/ 450);
+            document.getElementById('cs6P6').value = Math.round(parseInt(totalVolume)/ 600);
+            document.getElementById('cs9P6').value = Math.round(parseInt(totalVolume)/ 900);
+            document.getElementById('cs11P5').value = Math.round(parseInt(totalVolume)/ 900);
+            document.getElementById('cs12P6').value = Math.round(parseInt(totalVolume)/ 1200);
+            document.getElementById('cs9P9').value = Math.round(parseInt(totalVolume)/ 1350);
+    }
+     else if(turbo.checked && laminlow.checked === false && lamin.checked === false) {
+        document.getElementById('cs3P3').value = Math.round(parseInt(totalVolume)/ 250);
+            document.getElementById('cs3P6').value = Math.round(parseInt(totalVolume)/ 450);
+            document.getElementById('cs4P4').value = Math.round(parseInt(totalVolume)/ 550);
+            document.getElementById('cs5P5').value = Math.round(parseInt(totalVolume)/ 650);
+            document.getElementById('cs6P6').value = Math.round(parseInt(totalVolume)/ 900);
+            document.getElementById('cs9P6').value = Math.round(parseInt(totalVolume)/ 1350);
+            document.getElementById('cs11P5').value = Math.round(parseInt(totalVolume)/ 1350);
+            document.getElementById('cs12P6').value = Math.round(parseInt(totalVolume)/ 1800);
+            document.getElementById('cs9P9').value = Math.round(parseInt(totalVolume)/ 2000);
+     } else {
+        document.getElementById('cs3P3').value = '';
+            document.getElementById('cs3P6').value = '';
+            document.getElementById('cs4P4').value = '';
+            document.getElementById('cs5P5').value = '';
+            document.getElementById('cs6P6').value = '';
+            document.getElementById('cs9P6').value = '';
+            document.getElementById('cs11P5').value = '';
+            document.getElementById('cs12P6').value = '';
+            document.getElementById('cs9P9').value = '';
+     }
+
+}
+
+setTimeout(function () {
+calculateCs();
+}, 500);
+
+
+let boxes = document.querySelectorAll("input[type='checkbox']");
+
+for (let i = 0; i < boxes.length; i++) {
+    let box = boxes[i];
+    if (box.hasAttribute("class")) {
+        setupBox(box);
+    }
+
+    
+}
+
+
+
+function setupBox(box) {
+     let storageId = box.getAttribute("class");
+    let oldVal    = localStorage.getItem(storageId);
+    box.checked = oldVal === "true" ? true : false;
+
+    box.addEventListener("change", function() {
+        storedCheckBox =  localStorage.setItem(storageId, this.checked); 
+    });
+
+    
+
+
+}
+
+
+
+
+document.getElementById('a1').value = localStorage.getItem('totalVol');
+
+document.getElementById('calcBtn').addEventListener('click', calculateCs);
+document.getElementById('laminlow').addEventListener('click',  function(){
+/*     onlyOne(this);
+ */    calculateCs();
+}, false); 
+document.getElementById('lamin').addEventListener('click',  function(){
+/*     onlyOne(this);
+ */    calculateCs();
+}, false);  
+document.getElementById('turbo').addEventListener('click', function(){
+/*     onlyOne(this);
+ */    calculateCs();
+}, false); 
+ 
+
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

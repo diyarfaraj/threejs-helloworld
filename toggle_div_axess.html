@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+        integrity="sha256-zmfNZmXoNWBMemUOo1XUGFfc0ihGGLYdgtJS3KCr/l0=" crossorigin="anonymous" />
+    <title>Axess Toggle</title>
+
+    <style>
+        .ax-toggle {
+            margin-top: 20px;
+            background: #ed6701;
+            color: #294250;
+            display: inline-block;
+            display: flex;
+            cursor: pointer;
+        }
+
+        /*   .ax-toggle-open {
+            background: #f6f6f6;
+            margin-top: 20px;
+            color: #294250;
+            display: inline-block;
+            display: flex;
+            cursor: pointer;
+        } */
+
+
+
+        .ax-toggle-box {
+            display: none;
+            background: #294250;
+            text-align: left;
+            color: #ed6701;
+            font-size: 22pt;
+            padding: 2px;
+        }
+
+        .ax-toggle img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .hidden-ax-img {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ax-toggle">
+        <div class="ax-img-toggle">
+            <img src="/img/pic1.png" alt="">
+            <img class="hidden-ax-img" src="/img/pic2.png" alt="">
+        </div>
+        <h3>Click to toggle</h3>
+    </div>
+    <div class="ax-toggle-box">
+
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nesciunt odit qui in fugiat quo eveniet
+            officiis iusto, officia natus.</p>
+
+    </div>
+    <div class="ax-toggle">
+        <div class="ax-img-toggle">
+            <img src="/img/pic1.png" alt="">
+            <img class="hidden-ax-img" src="/img/pic2.png" alt="">
+        </div>
+        <h3>Click to toggle 2</h3>
+    </div>
+
+
+    <div class="ax-toggle-box">
+        <h3>Lorem ipsum dolor sit amet.</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nesciunt odit qui in fugiat quo eveniet
+            officiis iusto, officia natus.</p>
+    </div>
+
+
+    <script>
+        $(document).ready(function () {
+            $(".ax-toggle").click(function (e) {
+                e.preventDefault();
+
+                $(this).toggleClass('ax-toggle-open');
+                $(this).find('img').toggle('slow');
+                /* $(this).parent().parent().find('.ax-toggle-box'); */
+                $(this).next('.ax-toggle-box').slideToggle();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

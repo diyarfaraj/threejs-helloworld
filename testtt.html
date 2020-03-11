@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        hejhej
+    </div>
+    <script>
+    var mainProduct; 
+
+    function load_products(stock) {
+  $.ajax({
+    type: 'get',
+    url: 'https://store.gop.se/catalog/GetProductsByStockCode/?stockCode='+stock+'&relationId=0',
+    cache: false,
+    success: function (data) {
+      deleteProduct();
+      mainProduct = data;
+
+     /*  currency = data.CurrencyCode;
+      accessories = data.ProductRelations[0].Categories;
+      bomProducts = data.ProductRelations[1].Categories; */
+
+     
+    }
+  });
+}
+
+load_products("CT16112002");
+
+
+
+    </script>
+</body>
+</html>

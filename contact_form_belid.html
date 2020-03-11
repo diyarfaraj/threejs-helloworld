@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="col span-1-of-3">
+        <label for="email">Choose subject</label>
+    </div>
+    <div class="">
+        <select name="new-belid-subject" id="new-belid-subject">
+            <option value="professional">Professional</option>
+            <option value="reseller">Reseller</option>
+            <option value="consumer" selected>Private Consumer</option>
+
+        </select>
+    </div>
+    <div>
+        <form action="/user/sendmail" method="post">
+            <input name="subject" type="hidden" value=" " />
+            <input id="InputName" class="col-xs-12 col-sm-10 news-input-field" name="InputName" required="" type="text"
+                placeholder="Name" />
+            <br>
+            <input id="InputEmail" class="col-xs-12 col-sm-10 news-input-field" name="InputEmail" required=""
+                type="text" placeholder="Email" />
+            <br>
+
+            <textarea id="textArea" class="col-xs-12 col-sm-10 news-input-field" name="InputEmail" required=""
+                type="text" cols="30" rows="10" placeholder="Message"></textarea>
+            <br>
+            <input id="submit" class="btn btn-primary btn-content news-subscribe-btn" name="submit" type="submit"
+                value="SEND" /></form>
+    </div>
+
+    <input type="radio" name="demo" value="professional" id="radio-one" class="form-radio" checked><label
+        for="radio-one">Professional</label> <br>
+    <input type="radio" name="demo" value="one" id="radio-one" class="form-radio" checked><label
+        for="radio-one">Reseller</label> <br>
+    <input type="radio" name="demo" value="one" id="radio-one" class="form-radio" checked><label for="radio-one">Private
+        Consumer</label>
+
+    <style>
+        .form-radio {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            display: inline-block;
+            position: relative;
+            background-color: #f1f1f1;
+            color: #666;
+            top: 10px;
+            height: 30px;
+            width: 30px;
+            border: 0;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-right: 7px;
+            outline: none;
+            border: 2px solid;
+        }
+
+        .form-radio:checked::before {
+            position: absolute;
+            font: 13px/1 'Open Sans', sans-serif;
+            left: 9px;
+            top: 7px;
+            content: '\02143';
+            transform: rotate(40deg);
+        }
+
+        .form-radio:hover {
+            background-color: #f7f7f7;
+        }
+
+        .form-radio:checked {
+            background-color: #f1f1f1;
+        }
+
+        label {
+
+            color: #333;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            cursor: pointer;
+        }
+    </style>
+
+</body>
+
+</html>

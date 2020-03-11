@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Allm&auml;nt om taklampor</h1>
+    <p>En taklampa &auml;r en praktisk lampa som finns i n&auml;stan alla rum och &auml;r den lampa som oftast
+        st&aring;r f&ouml;r allm&auml;nbelysningen.</p>
+    <p>Tv&aring; vanliga typer av taklampor &auml;r pendel- och plafondlampor. En pendel &auml;r en taklampa som
+        h&auml;nger ned fr&aring;n taket och en plafond &auml;r en taklampa som sitter n&auml;ra taket och vars ljus
+        ofta reflekteras av innertaket. En taklampa kan ut&ouml;ver att belysa rummet ocks&aring; vara en del av
+        inredningen.</p>
+    <p>Belid har allt fr&aring;n diskreta plafonder till mer spektakul&auml;ra ljuskronor.
+        <span class="dots">..</span><button class="myBtn">+</button></p>
+    <div class="more">
+        <p><strong>En taklampa efter behov</strong></p>
+        <p>Vardagsrummet, k&ouml;ket, kontoret och barnrummet &auml;r rum som kan ha olika behov av taklampa. P&aring;
+            arbetsplatser och kontor brukar ett funktionellt och helt&auml;ckande ljus vara det viktigaste, medan ljuset
+            i bostaden g&auml;rna ocks&aring; ska skapa hemtrevnad.</p>
+        <p>Exempelvis &auml;r en elegant pendel ovanf&ouml;r k&ouml;ksbordet och en skena spotlights som komplement till
+            resten av k&ouml;ket en popul&auml;r l&ouml;sning som b&aring;de ger ett atmosf&auml;riskt och praktiskt
+            ljus.</p>
+        <p>Vanliga saker att ta med i ber&auml;kningen vid valet av taklampa &auml;r hur mycket ljus taklampan ger och
+            om det redan finns andra ljusk&auml;llor i rummet. Utseendet p&aring; taklampan &auml;r f&ouml;rst&aring;s
+            ocks&aring; en viktig faktor vid valet av taklampa.</p>
+        <p><strong>Taklampa vardagsrum</strong></p>
+        <p>Belids taklampa <a href="https://www.belid.se/en/product/pendants/t1309-tulip-pendant--1309">Tulip</a>
+            &auml;r en stilig taklampa med en tulpaninspirerad form. Tulip &auml;r tillverkad av metall men ger
+            &auml;nd&aring; ett organiskt intryck. Den sprider ljuset p&aring; ett sp&auml;nnande s&auml;tt och
+            l&auml;mpar sig utm&auml;rkt som taklampa i flera rum, inte minst i vardagsrum och i k&ouml;k. &nbsp;</p>
+        <p>Belids modell <a href="https://www.belid.se/en/catalog/search?search=capo">Capo</a> &auml;r en taklampa som
+            sprider ett j&auml;mt ljus. Den sf&auml;riska designen &auml;r klassisk och har &aring;terkommit genom
+            historien, inte minst var den vanlig under funkiseran runt 1930-talet. Capo finns b&aring;de som pendel och
+            plafond och glaskulan finns i olika storlekar. Capo &auml;r en taklampa f&ouml;r vardagsrum, k&ouml;k,
+            korridorer, trapphus &ndash; ja, den passar bra i n&auml;stan alla rum.</p>
+        <p><a href="https://www.belid.se/en/catalog/search?search=cooper">Cooper</a> taklampa har ett droppformat och
+            sp&auml;nnande utseende som sprider ett behagligt och rundat sken. F&ouml;rutom att den g&aring;r bra att
+            h&auml;nga p&aring; de traditionella st&auml;llena som mitt i rummet eller i ett f&ouml;nster, passar Cooper
+            taklampa ocks&aring; bra att h&auml;nga l&auml;ngs en v&auml;gg som d&aring; f&aring;ngar upp och
+            reflekterar ljuset.</p>
+        <p><strong>Taklampa barnrum</strong></p>
+        <p><a
+                href="http://belid.se/en/product/products-belid-ready-to-ship-sortiment-pendant/t1421-buddy-pendant--1421">Buddy</a>
+            &auml;r en taklampa vars mjuka former harmoniserar med de flesta rum och inredningar. Just att den ser rund
+            och trevlig ut g&ouml;r att den ocks&aring; passar bra som taklampa i barnrum. Buddy taklampa g&aring;r
+            ocks&aring; att komplettera med en matchande <a
+                href="http://belid.se/en/product/products-belid-ready-to-ship-sortiment-table-lamps/b-4001-buddy-h-335-mm--4001">bordslampa</a>
+            som p&aring;minner om en v&auml;nlig liten figur, en &rdquo;buddy&rdquo;.</p>
+    </div>
+
+    <a href="http://instagram.com/belidsweden"></a>
+    <a href="http://www.facebook.com/belidsweden"></a>
+    <a href="http://www.linkedin.com/company/10020596/"></a>
+    <script>
+        $(document).ready(function () {
+            $('.more').hide();
+
+            $('.myBtn').click(function (event) {
+
+                $('.more').slideToggle('slow');
+                $('.myBtn').text($(this).text() == '-' ? '+' : '-');
+                event.stopPropagation();
+                $('.dots').stop(true, true).toggle('slow');
+
+            });
+        });
+    </script>
+</body>
+
+</html>
